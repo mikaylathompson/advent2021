@@ -3,6 +3,8 @@
 This repo contains my runner script and template code, as well as daily solutions for Advent of Code 2021.
 It can be used simply by cloning and using the `./advent.py` script as described below, but for `--download` to work,
 you need to obtain your User Sesssion Id cookie from the AoC site, and set it as a `AOC_USER_SESSION_ID` env var.
+To use it for your code (rather than mine), delete all entries from the `days` folder, except for `dayN.py`
+(customize to be your own template).
 
 # Usage:
 

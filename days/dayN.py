@@ -14,7 +14,7 @@ def do_part_2(inpt):
     return
 
 def go(input_file, part):
-    inpt = utils.load_file(input_file)
+    inpt = utils.load_input_file(input_file)
     if part == 1:
         return do_part_1(inpt)
     else:
