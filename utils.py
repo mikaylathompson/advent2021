@@ -4,6 +4,9 @@ import os
 USER_AGENT = "adventofcode_working_directories_creator"
 YEAR = 2021
 
+
+# Input file things
+
 def load_input_file(fname):
     with open('inputs/' + fname, 'r') as f:
         return [l.strip() for l in f.readlines()]
@@ -27,3 +30,33 @@ def download_input(day):
             return f"day{day}.input"
         else:
             print("Server response for input is not valid.")
+
+
+# Solving things
+def transpose(l):
+    return list(map(list, zip(*l)))
+
+
+FOUR_DIRECTIONS = [
+    (0, 1),
+    (1, 0),
+    (0, -1),
+    (-1, 0)
+]
+
+EIGHT_DIRECTIONS = FOUR_DIRECTIONS + [
+    (1, 1),
+    (-1, 1),
+    (-1, -1),
+    (1, -1)
+]
+
+CARDINAL_DIRECTIONS = {
+    'N': FOUR_DIRECTIONS[0],
+    'S': FOUR_DIRECTIONS[2],
+    'E': FOUR_DIRECTIONS[1],
+    'W': FOUR_DIRECTIONS[3]
+}
+
+def grid(x, y, default=None):
+    return [[default for _ in range(x)] for _ in range(y)]

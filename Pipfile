@@ -10,6 +10,7 @@ rope = "*"
 requests = "*"
 ipython = "*"
 pylint = "*"
+parse = "*"
 
 [requires]
 python_version = "3.9"
