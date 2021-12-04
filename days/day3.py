@@ -20,7 +20,6 @@ def do_part_1(inpt):
 
     gamma = ''.join(['0' if d < 0 else '1' for d in digit_counts])
     epsilon = ''.join(['1' if d < 0 else '0' for d in digit_counts])
-    
 
     return int(gamma, base=2) * int(epsilon, base=2)
 
