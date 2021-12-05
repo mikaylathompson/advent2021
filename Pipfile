@@ -11,6 +11,7 @@ requests = "*"
 ipython = "*"
 pylint = "*"
 parse = "*"
+more-itertools = "*"
 
 [requires]
 python_version = "3.9"

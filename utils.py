@@ -1,5 +1,7 @@
 import requests
 import os
+import math
+import re
 
 USER_AGENT = "adventofcode_working_directories_creator"
 YEAR = 2021
@@ -60,3 +62,17 @@ CARDINAL_DIRECTIONS = {
 
 def grid(x, y, default=None):
     return [[default for _ in range(x)] for _ in range(y)]
+
+letters = set('abcdefghijklmnopqrstuvwxyz')
+vowels = set('aeiou')
+consonants = letters - vowels
+
+def lcm(a, b):
+    return a * b / math.gcd(a, b)
+
+def ints(s):
+    return [int(x) for x in re.findall(r"\d+", s)]
+
+
+def flatten(lst):
+    return [item for sublist in lst for item in sublist]
