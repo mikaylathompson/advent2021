@@ -73,6 +73,5 @@ def lcm(a, b):
 def ints(s):
     return [int(x) for x in re.findall(r"\d+", s)]
 
-
 def flatten(lst):
     return [item for sublist in lst for item in sublist]
