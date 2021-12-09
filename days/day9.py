@@ -32,30 +32,18 @@ def do_part_1(inpt):
                 risk += grid[r][c] + 1
     return risk
 
-
-def get_neighbors(pt, grid):
-    neighbors = set()
-    for d in utils.FOUR_DIRECTIONS:
-        if pt[0]+d[0] >= 0 and pt[1]+d[1] >= 0:
-            try:
-                _ = grid[pt[0]+d[0]][pt[1]+d[1]]
-                neighbors.add((pt[0]+d[0],pt[1]+d[1]))
-            except IndexError:
-                continue
-    return neighbors
-
 def get_basin_members(lp, grid):
-    members = set()
-    members.add(lp)
+    members = {lp}
     tried = set()
-    candidates = get_neighbors(lp, grid)
+    grid_dimensions = (len(grid), len(grid[0]))
+    candidates = utils.get_neighbor_coordinates(lp, grid_dimensions)
     while len(candidates) > 0:
         cand = candidates.pop()
         if cand in tried or cand in members:
             continue
         elif grid[cand[0]][cand[1]] < 9:
             members.add(cand)
-            candidates.update(get_neighbors(cand, grid))
+            candidates.update(utils.get_neighbor_coordinates(cand, grid_dimensions))
         else:
             tried.add(cand)
     return frozenset(members)

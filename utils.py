@@ -63,6 +63,15 @@ CARDINAL_DIRECTIONS = {
 def grid(x, y, default=None):
     return [[default for _ in range(x)] for _ in range(y)]
 
+def get_neighbor_coordinates(point, grid_dimensions, incl_diagonals=False):
+    neighbors = set()
+    for d in (FOUR_DIRECTIONS if not incl_diagonals else EIGHT_DIRECTIONS):
+        x = point[0] + d[0]
+        y = point[1] + d[1]
+        if 0 <= x <= (grid_dimensions[0] - 1) and 0 <= y <= (grid_dimensions[1] - 1):
+            neighbors.add((x, y))
+    return neighbors
+
 letters = set('abcdefghijklmnopqrstuvwxyz')
 vowels = set('aeiou')
 consonants = letters - vowels
