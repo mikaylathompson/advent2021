@@ -17,6 +17,15 @@ def load_input_file(fname):
 def load_as_ints(fname):
     return [int(x) for x in load_input_file(fname)]
 
+def load_as_grid(fname, type_=int, sep=" "):
+    grid = []
+    for line in load_input_file(fname):
+        if sep is None:
+            grid.append([type_(x) for x in list(line)])
+        else:
+            grid.append([type_(x) for x in line.split(sep)])
+    return grid
+
 
 def download_input(day):
     user_session_id = os.environ.get('AOC_USER_SESSION_ID')
