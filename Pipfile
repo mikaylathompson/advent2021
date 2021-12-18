@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 rope = "*"
+autopep8 = "*"
 
 [packages]
 requests = "*"
@@ -12,6 +13,8 @@ ipython = "*"
 pylint = "*"
 parse = "*"
 more-itertools = "*"
+networkx = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.9"
